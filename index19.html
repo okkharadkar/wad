@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Department Grid</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .dept-box {
+            background-color: #3f51b5;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .btn-box {
+            background-color: #f57c00;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            display: block;
+            font-weight: bold;
+        }
+
+        .btn-box:hover {
+            background-color: #ef6c00;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Main Page -->
+    <div data-role="page" id="home">
+        <div data-role="header">
+            <h1>Departments</h1>
+        </div>
+
+        <div data-role="content">
+            <div class="grid-container">
+                <div class="dept-box">IT</div>
+                <div class="dept-box">COMP</div>
+                <div class="dept-box">ETC</div>
+                <div class="dept-box">MECH</div>
+                <div class="dept-box">ELECT</div>
+            </div>
+            <div class="grid-container">
+                <a href="#it" class="btn-box">Button</a>
+                <a href="#comp" class="btn-box">Button</a>
+                <a href="#etc" class="btn-box">Button</a>
+                <a href="#mech" class="btn-box">Button</a>
+                <a href="#elect" class="btn-box">Button</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Department Info Pages -->
+    <div data-role="page" id="it">
+        <div data-role="header"><a href="#home" data-icon="back">Back</a>
+            <h1>IT Department</h1>
+        </div>
+        <div data-role="content">
+            <p>Information Technology focuses on networks, databases, and software systems.</p>
+        </div>
+    </div>
+
+    <div data-role="page" id="comp">
+        <div data-role="header"><a href="#home" data-icon="back">Back</a>
+            <h1>Computer Department</h1>
+        </div>
+        <div data-role="content">
+            <p>Computer Engineering emphasizes software development and hardware integration.</p>
+        </div>
+    </div>
+
+    <div data-role="page" id="etc">
+        <div data-role="header"><a href="#home" data-icon="back">Back</a>
+            <h1>ETC Department</h1>
+        </div>
+        <div data-role="content">
+            <p>Electronics & Telecommunication Engineering involves signal processing and communications.</p>
+        </div>
+    </div>
+
+    <div data-role="page" id="mech">
+        <div data-role="header"><a href="#home" data-icon="back">Back</a>
+            <h1>Mechanical Department</h1>
+        </div>
+        <div data-role="content">
+            <p>Mechanical Engineering deals with machines, dynamics, and manufacturing.</p>
+        </div>
+    </div>
+
+    <div data-role="page" id="elect">
+        <div data-role="header"><a href="#home" data-icon="back">Back</a>
+            <h1>Electrical Department</h1>
+        </div>
+        <div data-role="content">
+            <p>Electrical Engineering focuses on circuits, power systems, and electromagnetics.</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
