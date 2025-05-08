@@ -1,0 +1,30 @@
+/* style.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(30, 30, 30, 0.8)), url('https://upload.wikimedia.org/wikipedia/commons/e/e2/Bibi_ka_Maqbara_Aurangabad.jpg') center/cover no-repeat;
+    background-blend-mode: overlay;
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.landmark-card {
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.landmark-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    font-size: 0.9rem;
+}

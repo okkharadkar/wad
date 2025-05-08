@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlyNow Airlines - Book Your Journey</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #f0f4ff, #e0ecf7);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 26px;
+    }
+
+    .hero {
+      background: linear-gradient(90deg, #007bff 0%, #00bcd4 100%);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+      border-radius: 0 0 30px 30px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: bold;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-top: 1rem;
+    }
+
+    .flight-card {
+      border-radius: 15px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+      overflow: hidden;
+    }
+
+    .flight-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .flight-header {
+      background: #0d6efd;
+      color: white;
+      padding: 0.75rem;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .price-badge {
+      background-color: #28a745;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 10px;
+      font-size: 14px;
+      float: right;
+    }
+
+    .features {
+      background-color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+
+    .feature-icon {
+      font-size: 40px;
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    .cta-section {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: #f8f9fa;
+      border-radius: 20px;
+      margin: 3rem 0;
+    }
+
+    footer {
+      background-color: #343a40;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0.2rem 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">FlyNow</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Flights</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Deals</a></li>
+          <li class="nav-item"><a class="nav-link" href="book.html">Book Now</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search destination..." />
+          <button class="btn btn-light" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>FlyNow Airlines</h1>
+    <p>Your sky, your journey. Discover the joy of seamless travel with FlyNow – India’s trusted airline.</p>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features container">
+    <h2>Why Choose FlyNow?</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="feature-icon">✈️</div>
+        <h5>Affordable Fares</h5>
+        <p>Get the best deals and discounts on all domestic and international flights.</p>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-icon">🕒</div>
+        <h5>On-Time Performance</h5>
+        <p>We value your time. 95% of our flights depart and arrive on time.</p>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-icon">💺</div>
+        <h5>Comfort & Safety</h5>
+        <p>Spacious seats, in-flight meals, and world-class safety measures guaranteed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flight Cards -->
+  <div class="container mt-4">
+    <h3 class="text-center mb-4">Popular Routes</h3>
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="card flight-card">
+          <div class="flight-header">Mumbai ✈️ Delhi</div>
+          <div class="card-body">
+            <p><strong>Flight:</strong> Indigo 6E-101 <span class="price-badge">₹3,499</span></p>
+            <p><strong>Departure:</strong> 10:00 AM<br><strong>Arrival:</strong> 12:00 PM</p>
+            <a href="book.html" class="btn btn-primary w-100 mt-2">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card flight-card">
+          <div class="flight-header">Bangalore ✈️ Pune</div>
+          <div class="card-body">
+            <p><strong>Flight:</strong> AirAsia I5-202 <span class="price-badge">₹2,899</span></p>
+            <p><strong>Departure:</strong> 2:30 PM<br><strong>Arrival:</strong> 4:45 PM</p>
+            <a href="book.html" class="btn btn-primary w-100 mt-2">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card flight-card">
+          <div class="flight-header">Chennai ✈️ Kolkata</div>
+          <div class="card-body">
+            <p><strong>Flight:</strong> Vistara UK-303 <span class="price-badge">₹4,199</span></p>
+            <p><strong>Departure:</strong> 5:15 PM<br><strong>Arrival:</strong> 8:00 PM</p>
+            <a href="book.html" class="btn btn-primary w-100 mt-2">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <section class="cta-section container mt-5">
+    <h4>Ready to Fly?</h4>
+    <p>Book your next flight with FlyNow and experience travel like never before!</p>
+    <a href="book.html" class="btn btn-success btn-lg mt-2">Book Your Flight</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 FlyNow Airlines. All rights reserved.</p>
+    <p>Email: support@flynow.in | Call: 1800-123-4567</p>
+    <p>Follow us on
+      <a href="#" class="text-white text-decoration-underline">Instagram</a>,
+      <a href="#" class="text-white text-decoration-underline">Twitter</a>,
+      <a href="#" class="text-white text-decoration-underline">Facebook</a>
+    </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>City Hospital</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f9fbfd;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .navbar {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .hero-section {
+      background-color: #e3f2fd;
+      padding: 60px 20px;
+      text-align: center;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .hero-section h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #0d6efd;
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    .form-section {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+      display: none;
+    }
+
+    footer {
+      background-color: #343a40;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#">City Hospital</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="#" id="nav-home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" id="nav-register">Registration Form</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Landing Info -->
+  <div class="container mt-4" id="homeSection">
+    <div class="hero-section">
+      <h1>Welcome to City Hospital</h1>
+      <p>Delivering quality healthcare with compassion and excellence. Open 24/7 for all emergencies.</p>
+      <button class="btn btn-outline-primary mt-3" id="showCountBtn">Show Total Registrations</button>
+    </div>
+  </div>
+
+  <!-- Registration Form -->
+  <div class="container form-section" id="registrationFormSection">
+    <h3 class="mb-4 text-center text-primary">Patient Registration Form</h3>
+    <form id="registrationForm">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="name" required />
+        </div>
+        <div class="col-md-6">
+          <label for="age" class="form-label">Age</label>
+          <input type="number" class="form-control" id="age" required />
+        </div>
+        <div class="col-md-6">
+          <label for="gender" class="form-label">Gender</label>
+          <select class="form-select" id="gender" required>
+            <option value="" selected disabled>Select gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label for="contact" class="form-label">Contact Number</label>
+          <input type="tel" class="form-control" id="contact" required />
+        </div>
+        <div class="col-md-12">
+          <label for="address" class="form-label">Address</label>
+          <textarea class="form-control" id="address" rows="2" required></textarea>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-success px-5">Register</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="container mt-5" id="contact">
+    <h4>Contact Us</h4>
+    <p>Email: cityhospital@example.com</p>
+    <p>Phone: +91 9876543210</p>
+    <p>Address: 123 Health Street, City Center, India</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 City Hospital | Powered by Healthcare Tech
+  </footer>
+
+  <!-- Modal for Patient Count -->
+  <div class="modal fade" id="countModal" tabindex="-1" aria-labelledby="countModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Total Patient Registrations</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-center">
+          <h2 id="patientCountDisplay">0</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    let count = 0;
+
+    // Handle registration form submission
+    document.getElementById("registrationForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      count++;
+      alert("Patient registered successfully!");
+      this.reset();
+    });
+
+    // Show modal with patient count
+    document.getElementById("showCountBtn").addEventListener("click", function () {
+      document.getElementById("patientCountDisplay").textContent = count;
+      new bootstrap.Modal(document.getElementById("countModal")).show();
+    });
+
+    // Navbar navigation logic
+    document.getElementById("nav-register").addEventListener("click", function () {
+      document.getElementById("registrationFormSection").style.display = "block";
+      document.getElementById("homeSection").scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.getElementById("nav-home").addEventListener("click", function () {
+      document.getElementById("registrationFormSection").style.display = "none";
+      document.getElementById("homeSection").scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DreamHomes Real Estate</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f0f2f5;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center center / cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    .property-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .property-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .property-card img {
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .property-card .card-body {
+      background-color: #fff;
+    }
+
+    .price {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background-color: #1b1b1b;
+      color: #ccc;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 40px;
+    }
+
+    .btn-primary {
+      background-color: #004aad;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #003080;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <h1>Find Your Dream Home</h1>
+    <p>Your perfect property is just a click away.</p>
+  </section>
+
+  <section class="container py-5">
+    <div class="text-center mb-4">
+      <h2 style="color: #004aad;">Why Choose DreamHomes?</h2>
+      <p style="color: #333;">We bring you the best hand-picked properties across India with detailed listings, verified
+        ownership, and easy contact options. Whether you're buying your first home or investing, we make it seamless.
+      </p>
+    </div>
+  </section>
+  <!-- Property Listings -->
+  <div class="container py-5">
+    <div class="row g-4">
+      <!-- Property 1 -->
+      <div class="col-md-4">
+        <div class="card property-card">
+          <img src="./images/3bhkapt.jpg" class="card-img-top" alt="3BHK Apartment">
+          <div class="card-body">
+            <h5 class="card-title">3BHK Apartment</h5>
+            <p class="card-text">📍 Pune, Maharashtra</p>
+            <p class="card-text price text-success">₹75 Lakhs</p>
+            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#contactModal">Contact
+              Us</button>
+          </div>
+        </div>
+      </div>
+      <!-- Property 2 -->
+      <div class="col-md-4">
+        <div class="card property-card">
+          <img src="./images/luxury villa.jpeg" class="card-img-top" alt="Luxury Villa">
+          <div class="card-body">
+            <h5 class="card-title">Luxury Villa</h5>
+            <p class="card-text">📍 Bengaluru, Karnataka</p>
+            <p class="card-text price text-success">₹1.25 Crore</p>
+            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#contactModal">Contact
+              Us</button>
+          </div>
+        </div>
+      </div>
+      <!-- Property 3 -->
+      <div class="col-md-4">
+        <div class="card property-card">
+          <img src="./images/apartment.jpeg" class="card-img-top" alt="Studio Apartment">
+          <div class="card-body">
+            <h5 class="card-title">Studio Apartment</h5>
+            <p class="card-text">📍 Mumbai, Maharashtra</p>
+            <p class="card-text price text-success">₹45 Lakhs</p>
+            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#contactModal">Contact
+              Us</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="contactModalLabel">Contact DreamHomes</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>📞</strong> +91 9876543210</p>
+          <p><strong>📧</strong> contact@dreamhomes.in</p>
+          <p>Our agents will help you find the perfect property.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 <strong>DreamHomes Pvt. Ltd.</strong></p>
+      <p>Your trusted partner in real estate. Serving buyers with transparency and trust.</p>
+      <p>Follow us on:
+        <a href="#" style="color: #ccc; text-decoration: none;">Facebook</a> |
+        <a href="#" style="color: #ccc; text-decoration: none;">Instagram</a> |
+        <a href="#" style="color: #ccc; text-decoration: none;">Twitter</a>
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

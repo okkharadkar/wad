@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechCorp Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f4f6f9;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c') no-repeat center center/cover;
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .card-metric {
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card-metric:hover {
+      transform: scale(1.03);
+    }
+
+    .metric-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .card-update {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease;
+    }
+
+    .card-update:hover {
+      transform: translateY(-5px);
+    }
+
+    .testimonial {
+      font-style: italic;
+      background-color: #ffffff;
+      padding: 2rem;
+      border-left: 5px solid #0d6efd;
+      margin-top: 2rem;
+    }
+
+    footer {
+      background-color: #212529;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: #adb5bd;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">TechCorp</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Departments</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Reports</a></li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search..." />
+          <button class="btn btn-outline-light" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="container">
+      <h1>Welcome to TechCorp Dashboard</h1>
+      <p class="lead">Empowering departments. Enhancing productivity. Driving innovation.</p>
+    </div>
+  </div>
+
+  <!-- Metrics -->
+  <div class="container mt-5">
+    <h2 class="section-title">Company Metrics</h2>
+    <div class="row g-4 text-center">
+      <div class="col-md-4">
+        <div class="card p-4 bg-light card-metric">
+          <div class="metric-icon text-primary"><i class="bi bi-people-fill"></i></div>
+          <h5>Total Employees</h5>
+          <h2>420</h2>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4 bg-success text-white card-metric">
+          <div class="metric-icon"><i class="bi bi-currency-dollar"></i></div>
+          <h5>Annual Revenue</h5>
+          <h2>$5.2M</h2>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4 bg-warning text-dark card-metric">
+          <div class="metric-icon"><i class="bi bi-kanban-fill"></i></div>
+          <h5>Ongoing Projects</h5>
+          <h2>18</h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- Departments -->
+    <h2 class="section-title">Departments</h2>
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Development <span class="badge bg-primary rounded-pill">160</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Marketing <span class="badge bg-success rounded-pill">80</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Human Resources <span class="badge bg-warning rounded-pill">30</span>
+      </li>
+    </ul>
+
+    <!-- Updates Section -->
+    <h2 class="section-title">Latest Updates</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card card-update p-3">
+          <h5 class="card-title">New Product Launch</h5>
+          <p class="card-text">Our next-gen AI platform will be unveiled this July. Stay tuned!</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card card-update p-3">
+          <h5 class="card-title">Recruitment Drive</h5>
+          <p class="card-text">We’re expanding the DevOps team. Refer a candidate and earn rewards!</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card card-update p-3">
+          <h5 class="card-title">ISO Certification Achieved</h5>
+          <p class="card-text">TechCorp is now ISO 27001 certified for information security.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quote Section -->
+    <div class="testimonial mt-5 text-center">
+      “Innovation distinguishes between a leader and a follower.” <br> — Steve Jobs
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-5">
+    <div class="container">
+      <p class="mb-1">&copy; 2025 TechCorp Pvt. Ltd. All rights reserved.</p>
+      <p>
+        <a href="#">Privacy Policy</a> |
+        <a href="#">Terms of Use</a> |
+        <a href="#">Support</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

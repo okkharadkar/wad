@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        input,
+        button {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>User Registration</h2>
+    <form id="regForm">
+        <input type="text" id="fname" placeholder="First Name" required>
+        <input type="text" id="lname" placeholder="Last Name" required>
+        <input type="date" id="dob" required>
+
+        <label><input type="radio" name="gender" value="Male" required> Male</label>
+        <label><input type="radio" name="gender" value="Female"> Female</label>
+
+        <input type="text" id="mobile" placeholder="Mobile Number" maxlength="10" required>
+        <input type="email" id="email" placeholder="Email" required>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+        document.getElementById('regForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            let fname = document.getElementById('fname').value;
+            let lname = document.getElementById('lname').value;
+            let dob = document.getElementById('dob').value;
+            let gender = document.querySelector('input[name="gender"]:checked')?.value;
+            let mobile = document.getElementById('mobile').value;
+            let email = document.getElementById('email').value;
+
+            if (mobile.length !== 10 || isNaN(mobile)) {
+                alert('Mobile number must be 10 digits.');
+                return;
+            }
+
+            let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!email.match(emailPattern)) {
+                alert('Invalid email address.');
+                return;
+            }
+
+            let user = { fname, lname, dob, gender, mobile, email };
+
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+            users.push(user);
+            localStorage.setItem('users', JSON.stringify(users));
+
+            window.location.href = 'list.html';
+        });
+    </script>
+</body>
+
+</html>

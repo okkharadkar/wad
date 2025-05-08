@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PVG COET Portal</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <style>
+        body {
+            margin: 0;
+            background-color: #f4f6f9;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .full-height {
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            height: 100vh;
+            background-color: #003566;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 60px;
+            width: 240px;
+        }
+
+        .sidebar .list-group-item {
+            background-color: #003566;
+            border: none;
+            color: white;
+        }
+
+        .sidebar .list-group-item:hover,
+        .sidebar .list-group-item.active {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        .main-content {
+            margin-left: 240px;
+            padding: 2rem;
+        }
+
+        .college-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('https://www.pvgcoet.ac.in/wp-content/uploads/2019/10/4-COET-Main-Building.jpg') center/cover no-repeat;
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        footer {
+            margin-left: 240px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar shadow">
+        <div class="text-center fw-bold mb-4 fs-5">PVG COET Portal</div>
+        <div class="list-group list-group-flush">
+            <a href="#" class="list-group-item active" onclick="showSection('collegeInfo')">Home</a>
+            <a href="#" class="list-group-item" onclick="showSection('profile')">Profile</a>
+            <a href="#" class="list-group-item" onclick="showSection('courses')">Courses</a>
+            <a href="#" class="list-group-item" onclick="showSection('results')">Results</a>
+            <a href="#" class="list-group-item" onclick="showSection('notices')">Notices</a>
+            <a href="#" class="list-group-item text-danger">Logout</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- College Info -->
+        <div id="collegeInfo">
+            <div class="college-hero shadow-sm mb-5">
+                <h1 class="display-5 fw-bold">PVG's College of Engineering & Technology, Pune</h1>
+                <p class="lead mt-3">
+                    Established in 1985 | NAAC Accredited | Affiliated to Savitribai Phule Pune University
+                </p>
+                <p>
+                    PVG COET is a premier engineering institute in Maharashtra committed to delivering high-quality
+                    education, innovation, and leadership in technology.
+                </p>
+            </div>
+        </div>
+
+        <!-- Student Profile -->
+        <div class="card shadow-sm mb-4 hidden" id="profile">
+            <div class="card-body">
+                <h5 class="card-title text-primary">Student Profile</h5>
+                <p><strong>Name:</strong> Ananya Sharma</p>
+                <p><strong>ID:</strong> CSE2025001</p>
+                <p><strong>Branch:</strong> Computer Engineering</p>
+                <p><strong>Email:</strong> ananya.sharma@pvgcoet.ac.in</p>
+            </div>
+        </div>
+
+        <!-- Courses -->
+        <div class="card shadow-sm mb-4 hidden" id="courses">
+            <div class="card-body">
+                <h5 class="card-title text-success">Current Courses</h5>
+                <ul>
+                    <li>Database Management Systems</li>
+                    <li>Operating Systems</li>
+                    <li>Software Engineering</li>
+                    <li>Artificial Intelligence</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="card shadow-sm mb-4 hidden" id="results">
+            <div class="card-body">
+                <h5 class="card-title text-warning">Academic Results</h5>
+                <p><strong>Semester 5 SGPA:</strong> 9.1</p>
+                <p><strong>Semester 4 SGPA:</strong> 8.7</p>
+                <p><strong>Cumulative CGPA:</strong> 8.9</p>
+            </div>
+        </div>
+
+        <!-- Notices -->
+        <div class="card shadow-sm mb-4 hidden" id="notices">
+            <div class="card-body">
+                <h5 class="card-title text-danger">Latest Notices</h5>
+                <ul>
+                    <li>📢 Final Year Project Review on May 12</li>
+                    <li>📢 Internship Expo 2025 registration open</li>
+                    <li>📢 Workshop on AI Ethics - May 20</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-3 bg-light border-top">
+        &copy; 2025 PVG COET, Pune | Designed by [Your Name]
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function showSection(sectionId) {
+            const sections = ['collegeInfo', 'profile', 'courses', 'results', 'notices'];
+            sections.forEach(id => {
+                document.getElementById(id).classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+
+            // Highlight selected menu item
+            document.querySelectorAll('.sidebar .list-group-item').forEach(item => item.classList.remove('active'));
+            const clickedItem = Array.from(document.querySelectorAll('.sidebar .list-group-item'))
+                .find(item => item.textContent.trim().toLowerCase().includes(sectionId.toLowerCase()));
+            if (clickedItem) clickedItem.classList.add('active');
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

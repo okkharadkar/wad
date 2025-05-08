@@ -1,0 +1,165 @@
+<!-- views/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Spiritual Tourist Places in India</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            transform: scale(1.02);
+            transition: 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Spiritual Tourist Places of India</h1>
+        <div class="row g-4">
+
+            <!-- Kashi Vishwanath -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card" data-bs-toggle="modal" data-bs-target="#kashiModal">
+                    <img src="https://images.deccanherald.com/deccanherald/import/sites/dh/files/gallery_images/2021/12/13/file7it39sqcijbouyq81z6.jpg?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true"
+                        class="card-img-top" alt="Kashi Temple">
+                    <div class="card-body">
+                        <h5 class="card-title">Kashi Vishwanath</h5>
+                        <p class="card-text">One of the most sacred temples in Varanasi dedicated to Lord Shiva.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Golden Temple -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card" data-bs-toggle="modal" data-bs-target="#goldenModal">
+                    <img src="https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2019/11/golden-temple-feature.jpg"
+                        class="card-img-top" alt="Golden Temple">
+                    <div class="card-body">
+                        <h5 class="card-title">Golden Temple</h5>
+                        <p class="card-text">Holiest Sikh shrine, famous for its gold-covered architecture and Langar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ram Mandir -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card" data-bs-toggle="modal" data-bs-target="#ramModal">
+                    <img src="https://akm-img-a-in.tosshub.com/aajtak/images/story/202505/68182c01b9479-ram-mandir-ayodhya-050947839-16x9.jpg?size=948:533"
+                        class="card-img-top" alt="Ram Mandir">
+                    <div class="card-body">
+                        <h5 class="card-title">Ram Mandir, Ayodhya</h5>
+                        <p class="card-text">Newly built temple at the birthplace of Lord Ram, a cultural symbol of
+                            India.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kedarnath -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card" data-bs-toggle="modal" data-bs-target="#kedarnathModal">
+                    <img src="https://uttarakhandtourism.gov.in/assets/media/UTDB_media_1736325021Kedarnath_Temple.jpg"
+                        class="card-img-top" alt="Kedarnath">
+                    <div class="card-body">
+                        <h5 class="card-title">Kedarnath Temple</h5>
+                        <p class="card-text">A sacred temple of Lord Shiva located in the Himalayas of Uttarakhand.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modals Section -->
+
+    <!-- Kashi Modal -->
+    <div class="modal fade" id="kashiModal" tabindex="-1" aria-labelledby="kashiLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="kashiLabel">Kashi Vishwanath Temple, Varanasi</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.deccanherald.com/deccanherald/import/sites/dh/files/gallery_images/2021/12/13/file7it39sqcijbouyq81z6.jpg?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true"
+                        class="img-fluid mb-3" alt="Kashi Temple">
+                    <p>The Kashi Vishwanath Temple, one of the 12 Jyotirlingas of Lord Shiva, is located in the
+                        spiritual capital of India – Varanasi. It's a major pilgrimage site for Hindus, and the Ganga
+                        Aarti performed here is mesmerizing.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Golden Temple Modal -->
+    <div class="modal fade" id="goldenModal" tabindex="-1" aria-labelledby="goldenLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="goldenLabel">Golden Temple, Amritsar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2019/11/golden-temple-feature.jpg"
+                        class="img-fluid mb-3" alt="Golden Temple">
+                    <p>The Harmandir Sahib, also known as the Golden Temple, is the most important pilgrimage site of
+                        Sikhism. It is open to people of all religions and offers free meals to thousands every day
+                        through its Langar kitchen.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ram Mandir Modal -->
+    <div class="modal fade" id="ramModal" tabindex="-1" aria-labelledby="ramLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ramLabel">Ram Mandir, Ayodhya</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://akm-img-a-in.tosshub.com/aajtak/images/story/202505/68182c01b9479-ram-mandir-ayodhya-050947839-16x9.jpg?size=948:533"
+                        class="img-fluid mb-3" alt="Ram Mandir">
+                    <p>The Ram Mandir in Ayodhya is a recently built grand temple dedicated to Lord Ram at his
+                        birthplace. The temple stands as a symbol of cultural unity and devotion, and has become a major
+                        attraction in Uttar Pradesh.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kedarnath Modal -->
+    <div class="modal fade" id="kedarnathModal" tabindex="-1" aria-labelledby="kedarnathLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="kedarnathLabel">Kedarnath Temple, Uttarakhand</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://uttarakhandtourism.gov.in/assets/media/UTDB_media_1736325021Kedarnath_Temple.jpg"
+                        class="img-fluid mb-3" alt="Kedarnath Temple">
+                    <p>Kedarnath is one of the holiest Hindu shrines and part of the Char Dham Yatra. Located at an
+                        altitude of 3,583 meters in the Garhwal Himalayas, the temple is dedicated to Lord Shiva and
+                        surrounded by snow-capped peaks.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

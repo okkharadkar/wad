@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GreenSprout Organic Farm</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background-color: #f4fbe3;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    header {
+      background: url('https://images.unsplash.com/photo-1561047029-3000e62f58f5?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+      height: 60vh;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    header h1 {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .card img {
+      height: 200px;
+      object-fit: cover;
+    }
+    .animate-fade {
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    footer {
+      background-color: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">GreenSprout Farm</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="#offers">Offers</a></li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search products...">
+        <button class="btn btn-outline-light" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!-- Header -->
+<header>
+  <h1 class="animate-fade">Welcome to GreenSprout Organic Farm</h1>
+</header>
+
+<!-- Product Section -->
+<section class="container my-5" id="products">
+  <h2 class="text-center mb-4">Our Organic Products</h2>
+  <div class="row g-4">
+    <div class="col-md-4 animate-fade">
+      <div class="card shadow">
+        <img src="./images/organic1.jpg" class="card-img-top" alt="Organic Veggies">
+        <div class="card-body">
+          <h5 class="card-title">Organic Vegetables</h5>
+          <p class="card-text">Freshly grown seasonal vegetables without any chemicals.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 animate-fade">
+      <div class="card shadow">
+        <img src="./images/organic fruits.jpg" class="card-img-top" alt="Organic Fruits">
+        <div class="card-body">
+          <h5 class="card-title">Organic Fruits</h5>
+          <p class="card-text">Juicy and healthy fruits directly from our farm.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 animate-fade">
+      <div class="card shadow">
+        <img src="./images/organic dairy.webp" class="card-img-top" alt="Dairy">
+        <div class="card-body">
+          <h5 class="card-title">Organic Dairy</h5>
+          <p class="card-text">Pure milk and dairy products from grass-fed cattle.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Offers Section -->
+<section class="text-center" id="offers">
+  <h3 class="mb-3">Want to see our latest offers?</h3>
+  <button class="btn btn-outline-success btn-lg" onclick="showModal()">View Offers & Charges</button>
+</section>
+
+<!-- Offers Modal -->
+<div class="modal fade" id="offersModal" tabindex="-1" aria-labelledby="offersModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="offersModalLabel">Our Offers & Charges</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li><strong>Monthly Veggie Box:</strong> ₹799 (includes 8 types of vegetables)</li>
+          <li><strong>Fruit Basket Combo:</strong> ₹599 (5 fruit types weekly)</li>
+          <li><strong>Home Delivery:</strong> Free for orders above ₹999</li>
+          <li><strong>Farm Visit:</strong> ₹250 per person (includes lunch)</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 GreenSprout Organic Farm. All Rights Reserved.</p>
+</footer>
+
+<!-- Scripts -->
+<script>
+  function showModal() {
+    const modal = new bootstrap.Modal(document.getElementById('offersModal'));
+    modal.show();
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
