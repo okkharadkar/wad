@@ -143,7 +143,6 @@
         </table>
     </div>
 
-
     <!-- Delete Page -->
     <div id="deletePage" class="page">
         <h2>Delete Admission</h2>
@@ -159,32 +158,33 @@
     </div>
 
     <script>
-        const API_URL = "http://localhost:5000/api/admissions";
+        const BASE_URL = "http://localhost:5000/api/admissions";
 
         function showPage(pageId) {
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            document.getElementById(pageId).classList.add('active');
+            const pages = document.querySelectorAll(".page");
+            pages.forEach(p => p.classList.remove("active"));
+            document.getElementById(pageId).classList.add("active");
 
-            // Load data dynamically
-            if (pageId === 'viewPage') fetchAndDisplay();
-            if (pageId === 'updatePage') fetchAndUpdate();
-            if (pageId === 'deletePage') fetchAndDelete();
+            // Trigger data fetch based on selected page
+            if (pageId === "viewPage") fetchAndDisplay();
+            if (pageId === "updatePage") fetchAndUpdate();
+            if (pageId === "deletePage") fetchAndDelete();
         }
 
         // Display Admissions
         async function fetchAndDisplay() {
             try {
-                const res = await fetch(API_URL);
+                const res = await fetch(BASE_URL);
                 const data = await res.json();
                 const table = document.getElementById("admissionTable");
                 table.innerHTML = "";
                 data.forEach(adm => {
                     const row = document.createElement("tr");
                     row.innerHTML = `
-            <td>${adm.studentName}</td>
-            <td>${adm.email}</td>
-            <td>${adm.course}</td>
-            <td>${adm.status}</td>`;
+                        <td>${adm.studentName}</td>
+                        <td>${adm.email}</td>
+                        <td>${adm.course}</td>
+                        <td>${adm.status}</td>`;
                     table.appendChild(row);
                 });
             } catch (err) {
@@ -192,99 +192,16 @@
             }
         }
 
-        // Update Admission
-        async function fetchAndUpdate() {
-            try {
-                const res = await fetch(API_URL);
-                const data = await res.json();
-                const table = document.getElementById("updateTable");
-                table.innerHTML = "";
-                data.forEach(adm => {
-                    const row = document.createElement("tr");
-                    row.innerHTML = `
-            <td>${adm.studentName}</td>
-            <td>
-              <select onchange="updateStatus('${adm._id}', this.value)">
-                <option value="Pending" ${adm.status === "Pending" ? "selected" : ""}>Pending</option>
-                <option value="Approved" ${adm.status === "Approved" ? "selected" : ""}>Approved</option>
-                <option value="Rejected" ${adm.status === "Rejected" ? "selected" : ""}>Rejected</option>
-              </select>
-            </td>`;
-                    table.appendChild(row);
-                });
-            } catch (err) {
-                alert("Error updating data: " + err.message);
-            }
-        }
-
-        async function updateStatus(id, status) {
-            try {
-                const res = await fetch(`${API_URL}/${id}`, {
-                    method: "PUT",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({ status })
-                });
-                if (res.ok) {
-                    alert("Status updated successfully!");
-                    fetchAndUpdate();
-                } else {
-                    alert("Failed to update status");
-                }
-            } catch (err) {
-                alert("Error: " + err.message);
-            }
-        }
-
-        // Delete Admission
-        async function fetchAndDelete() {
-            try {
-                const res = await fetch(API_URL);
-                const data = await res.json();
-                const table = document.getElementById("deleteTable");
-                table.innerHTML = "";
-                data.forEach(adm => {
-                    const row = document.createElement("tr");
-                    row.innerHTML = `
-            <td>${adm.studentName}</td>
-            <td><button onclick="deleteAdmission('${adm._id}')">Delete</button></td>`;
-                    table.appendChild(row);
-                });
-            } catch (err) {
-                alert("Error deleting data: " + err.message);
-            }
-        }
-
-        async function deleteAdmission(id) {
-            if (confirm("Are you sure you want to delete this admission?")) {
-                try {
-                    const res = await fetch(`${API_URL}/${id}`, {
-                        method: "DELETE"
-                    });
-                    if (res.ok) {
-                        alert("Admission deleted.");
-                        fetchAndDelete();
-                    } else {
-                        alert("Failed to delete admission.");
-                    }
-                } catch (err) {
-                    alert("Error: " + err.message);
-                }
-            }
-        }
-
-        // Add New Admission
+        // Add Admission
         document.getElementById("admissionForm").addEventListener("submit", async (e) => {
             e.preventDefault();
-
             const studentName = document.getElementById("studentName").value.trim();
             const email = document.getElementById("email").value.trim();
             const course = document.getElementById("course").value.trim();
             const status = document.getElementById("status").value;
 
             try {
-                const res = await fetch(API_URL, {
+                const res = await fetch(`${BASE_URL}/signup`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -303,6 +220,88 @@
                 alert("Network Error: " + err.message);
             }
         });
+
+        // Update Admissions
+        async function fetchAndUpdate() {
+            try {
+                const res = await fetch(BASE_URL);
+                const data = await res.json();
+                const table = document.getElementById("updateTable");
+                table.innerHTML = "";
+                data.forEach(adm => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${adm.studentName}</td>
+                        <td>
+                            <select onchange="updateStatus('${adm._id}', this.value)">
+                                <option value="Pending" ${adm.status === "Pending" ? "selected" : ""}>Pending</option>
+                                <option value="Approved" ${adm.status === "Approved" ? "selected" : ""}>Approved</option>
+                                <option value="Rejected" ${adm.status === "Rejected" ? "selected" : ""}>Rejected</option>
+                            </select>
+                        </td>`;
+                    table.appendChild(row);
+                });
+            } catch (err) {
+                alert("Error updating data: " + err.message);
+            }
+        }
+
+        async function updateStatus(id, status) {
+            try {
+                const res = await fetch(`${BASE_URL}/${id}`, {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ status })
+                });
+                if (res.ok) {
+                    alert("Status updated successfully!");
+                    fetchAndUpdate();
+                } else {
+                    alert("Failed to update status");
+                }
+            } catch (err) {
+                alert("Error: " + err.message);
+            }
+        }
+
+        // Delete Admissions
+        async function fetchAndDelete() {
+            try {
+                const res = await fetch(BASE_URL);
+                const data = await res.json();
+                const table = document.getElementById("deleteTable");
+                table.innerHTML = "";
+                data.forEach(adm => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${adm.studentName}</td>
+                        <td><button onclick="deleteAdmission('${adm._id}')">Delete</button></td>`;
+                    table.appendChild(row);
+                });
+            } catch (err) {
+                alert("Error deleting data: " + err.message);
+            }
+        }
+
+        async function deleteAdmission(id) {
+            if (confirm("Are you sure you want to delete this admission?")) {
+                try {
+                    const res = await fetch(`${BASE_URL}/${id}`, {
+                        method: "DELETE"
+                    });
+                    if (res.ok) {
+                        alert("Admission deleted.");
+                        fetchAndDelete();
+                    } else {
+                        alert("Failed to delete admission.");
+                    }
+                } catch (err) {
+                    alert("Error: " + err.message);
+                }
+            }
+        }
     </script>
 </body>
 

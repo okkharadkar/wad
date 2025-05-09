@@ -9,6 +9,7 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.json());
 
 // MongoDB Connection
 mongoose.connect('mongodb+srv://omkharadkar:omismongodb0204@cluster0.7btfa2c.mongodb.net/collegeAdmissions', {
